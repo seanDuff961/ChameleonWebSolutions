@@ -1,0 +1,327 @@
+.header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+    z-index: 3;
+}
+
+.header li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+    background-color: #f4f4f4;
+}
+
+.header .logo {
+    display: block;
+    float: right;
+    font-size: 2em;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.mobile-social-icons {
+    margin-top: 5px;
+    margin-right: -66px;
+}
+
+.mobile-social-icons i {
+    color: #89BF4D !important
+}
+
+/* menu */
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    z-index: 10000;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: #89BF4D;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #89BF4D;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+    min-height: 380px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+/* 48em = 768px */
+
+.clearfix {
+    clear: both;
+    height: 0;
+}
+
+.social-icons {
+    float: right;
+    display: inline-block;
+}
+
+.mid-content {
+    width: 70%;
+    text-align: center;
+    float: left;
+    margin-top: -16px;
+}
+
+.heading-image {
+    position: relative;
+    width: 100%;
+    height: 495px;
+    z-index: 1
+}
+
+
+@media (max-width: 840px) {
+    .mid-content {
+        width: 60%;
+    }
+}
+
+.visible-mobile, .visible-tablet {
+    display: none;
+    color: #89BF4D;
+}
+
+.hidden-desktop {
+    display: none;
+}
+
+.visible-xs {
+    display: none;
+}
+
+@media screen and (max-width: 520px) {
+    .visible-xs {
+        display: block;
+    }
+
+    .hidden-xs {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .hidden-mobile {
+        display: none;
+    }
+
+    .visible-mobile {
+        display: block;
+    }
+
+    .hidden-desktop {
+        display: block;
+    }
+
+    .heading-image {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+    .hidden-tablet {
+        display: none !important
+    }
+
+    .visible-tablet {
+        display: block
+    }
+
+    .hidden-desktop {
+        display: block
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .responsive-header-gutter {
+        margin-top: 80px !important;
+    }
+}
+
+.header-gutter {
+    margin-top: 80px;
+    color: #89BF4D;
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+    .banner h2 {
+        padding-left: 200px;
+        padding-top: 80px;
+    }
+
+    .site-header .col-3 {
+        text-align: right;
+        width: 100px !important
+    }
+}
+
+@media (min-width: 820px) and (max-width: 980px) {
+    .site-header .col-2 {
+        width: 440px
+    }
+
+}
+
+/* Home page slideshow */
+
+.heading-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hidden-image {
+    visibility: hidden;
+    position: relative !important;
+}
+
+.heading-image .slide {
+    z-index: 1;
+}
+
+.heading-image .active {
+    z-index: 3;
+}
+
+/* End Homepage slideshow*/
+
+/*iphone5*/
+@media screen and (max-width: 320px) {
+    .heading-image {
+        width: 100%;
+        height: 175px !important;
+        margin-bottom: 72px;
+        margin-top: 10px;
+    }
+
+    .description, .services {
+        margin-top: -23px !important;
+        padding-bottom: 20px;
+        overflow: hidden;
+        border-bottom: none !important;
+        /*border-bottom: 1px solid #e2e2e2;*/
+    }
+
+    .description .col-1 .what-i-do-best {
+        line-height: 1;
+        font-size: 36px;
+        /* padding: 0; */
+        margin-top: 5px;
+        margin-left: -13px;
+    }
+
+    .banner {
+        margin-top: 25px;
+    }
+}
+
+/*iphone6*/
+@media screen and (max-width: 375px) {
+    .heading-image {
+       
+        height: 190px !important;
+    }
+}
+
+@media (min-width: 376px) and (max-width: 414px) {
+    .heading-image {
+        
+        height: 240px !important;
+    }
+}
+@media (min-width: 417px) and (max-width: 520px) {
+    .heading-image {
+        height: 280px !important;
+    }
+}
+@media (min-width: 521px) and (max-width: 980px) {
+    .heading-image {
+        width: 100%;
+        height: 380px !important;
+    }
+}
+
+
+
+
